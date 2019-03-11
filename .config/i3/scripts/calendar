@@ -1,0 +1,15 @@
+#! /bin/sh
+
+DATEFTM="${DATEFTM:-+%a. %d.%m.%Y %H:%M}"
+SHORTFMT="${SHORTFMT:-+%d.%m.%Y}"
+LABEL="${LABEL:-}"
+blockdate=$(date "$DATEFTM")
+shortblockdate=$(date "$SHORTFMT")
+
+case "$BLOCK_BUTTON" in
+    1|2|3)
+	zenity --calendar
+    esac
+echo "$LABEL$blockdate"
+echo "$LABEL$shortblockdate"
+
