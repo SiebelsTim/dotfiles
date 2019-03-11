@@ -1,0 +1,9 @@
+!                       bg         border   separator
+rofi.color-window: argb:aa2f343f
+!                       bg         fg          bgalt          hlbg            hlfg
+rofi.color-normal: argb:aa2f343f, #fff3f4f5, #aa2f343f, #2f343f
+rofi.color-active: argb:aa2f343f
+rofi.width: 100
+rofi.lines: 5
+rofi.columns: 2
+rofi.padding: 500
