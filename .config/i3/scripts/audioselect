@@ -1,0 +1,9 @@
+#!/bin/bash
+
+
+profiles=$(pacmd list-cards | egrep -e "[^<]output:" | egrep -e "input" -v | cut -d ':' -f2)
+
+chosen=$(printf "%s" "$profiles" | dmenu -i -p "Select audio output") &&
+	pacmd set-card-profile 0 output:$chosen
+
+pkill -RTMIN+1 i3blocks
