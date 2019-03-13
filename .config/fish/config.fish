@@ -69,7 +69,7 @@ end
 
 
 function fish_title
-    echo (whoami) "@" (hostname) "#" (pwd)
+    echo (whoami) "@" (hostname) "#" (pwd) '$' $_
 end
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
