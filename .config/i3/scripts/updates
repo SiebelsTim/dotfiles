@@ -1,7 +1,7 @@
 #!/bin/sh
 count=`/usr/lib/update-notifier/apt-check --human-readable | head -1 | awk '{print $1;}'`
 
-if [ "$BLOCK_BUTTON" -eq 1 ]
+if [ ! -z "$BLOCK_BUTTON" ] && [ "$BLOCK_BUTTON" -eq 1 ]
 then
   update-manager &
 fi

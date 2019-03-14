@@ -16,6 +16,11 @@
 
 TYPE="${BLOCK_INSTANCE:-mem}"
 
+if [ ! -z "$BLOCK_BUTTON" ] && [ "$BLOCK_BUTTON" -eq 3 ]
+then
+	notify-send "$(ps ax --sort=-%mem --format comm,%mem | head -n 15 )"
+fi
+
 awk -v type=$TYPE '
 /^MemTotal:/ {
 	mem_total=$2
