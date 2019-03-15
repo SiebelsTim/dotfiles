@@ -245,6 +245,9 @@ mode "$mode_launch" {
 }
 bindsym $mod+p mode "$mode_launch"
 
+bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
+
 exec --no-startup-id nm-applet
 exec --no-startup-id compton --config ~/.config/compton/compton.conf
 exec_always --no-startup-id xinput --set-prop "AlpsPS/2 ALPS GlidePoint" "libinput Natural Scrolling Enabled" 1

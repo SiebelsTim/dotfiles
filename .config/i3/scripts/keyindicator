@@ -1,0 +1,26 @@
+#!/bin/sh
+
+bitmap_CAPS=1
+bitmap_NUM=2
+
+color_on='#aaaaaa'
+color_off='#222222'
+
+case $BLOCK_INSTANCE in
+	"NUM") bitmap=$bitmap_NUM;;
+	"CAPS") bitmap=$bitmap_CAPS;;
+esac
+
+mask=$(xset -q | grep LED | sed 's/.*LED mask:\s*//g')
+
+result=$(($mask & $bitmap))
+
+echo "$BLOCK_INSTANCE"
+echo "$BLOCK_INSTANCE"
+if [ "$result" -ne 0 ]
+then
+	echo "$color_on"
+else
+	echo "$color_off"
+fi
+
