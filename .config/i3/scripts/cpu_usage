@@ -46,7 +46,8 @@ close(MPSTAT);
 $cpu_usage eq -1 and die 'Can\'t find CPU information';
 
 if ($ENV{BLOCK_BUTTON} == 3) {
-	exec('notify-send "$(ps ax --sort=-%cpu --format comm,%cpu | head -n 15)"');
+	my $ps = `ps ax --sort=-%cpu --format "comm:20,%cpu" | head -n 15 | tail -n +2 | awk '{s=substr(\$0,1,20)}{p=substr(\$0,20)}{divisor=4}{ printf s; printf "["; for(i=0;i<p/divisor;i++) printf "="; for(i=0;i<(100-p)/divisor;++i) printf " "; printf "] %.2f%%\\n", p;}'`;
+	exec("notify-send '$ps'");
 }
 
 # Print short_text, full_text
