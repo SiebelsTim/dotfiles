@@ -6,6 +6,7 @@ Plug 'SirVer/ultisnips'
 " Snippets are separated from the engine. Add this if you want them:
 Plug 'honza/vim-snippets'
 Plug 'scrooloose/nerdtree'
+Plug 'PotatoesMaster/i3-vim-syntax'
 
 " Initialize plugin system
 call plug#end()
