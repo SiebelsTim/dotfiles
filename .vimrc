@@ -7,7 +7,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'scrooloose/nerdtree'
 Plug 'PotatoesMaster/i3-vim-syntax'
-
+Plug 'tpope/vim-surround'
 " Initialize plugin system
 call plug#end()
 
@@ -22,5 +22,11 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 let g:UltiSnipsSnippetDirectories = ['/home/tim/.vim/ultisnips', '/home/tim/.vim/plugged/vim-snippets/UltiSnips']
 
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeMapOpenInTab='<tab>'
+
+let g:surround_{char2nr('c')} = "\\\1command\1{\r}"
 
 set number
+noremap <silent> <C-S>          :update<CR>
+vnoremap <silent> <C-S>         <C-C>:update<CR>
+inoremap <silent> <C-S>         <C-O>:update<CR>
