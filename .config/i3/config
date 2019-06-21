@@ -210,12 +210,16 @@ bar {
 
 bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks 
 bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+1 i3blocks
+bindsym Control+XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 1%+ && pkill -RTMIN+1 i3blocks 
+bindsym Control+XF86AudioLowerVolume exec amixer -q -D pulse sset Master 1%- && pkill -RTMIN+1 i3blocks
 bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+1 i3blocks
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5 && pkill -RTMIN+2 i3blocks
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5 && pkill -RTMIN+2 i3blocks
 
+bindsym Control+XF86MonBrightnessUp exec xbacklight -inc 1 && pkill -RTMIN+2 i3blocks
+bindsym Control+XF86MonBrightnessDown exec xbacklight -dec 1 && pkill -RTMIN+2 i3blocks
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
