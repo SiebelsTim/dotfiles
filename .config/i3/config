@@ -140,6 +140,7 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 
+for_window [title="Android Emulator -*"] floating enable
 # default workspaces
 assign [class="Firefox"] $ws1
 assign [class="Thunderbird"] $ws5
