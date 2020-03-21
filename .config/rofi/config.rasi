@@ -4,7 +4,6 @@
   text-color: #8ca0aa;
   spacing: 0;
   width: 70%;
-  font: "fonts/HurmitNerdFontComplete_Mono.otf";
 }
 
 inputbar {
