@@ -246,17 +246,6 @@ mode "$mode_system" {
 }
 bindsym $mod+Pause mode "$mode_system"
 
-set $mode_launch App launch: (F)irefox, (T)hunderbird
-mode "$mode_launch" {
-	bindsym f exec firefox; mode "default"
-	bindsym t exec thunderbird; mode "default"
-        # back to normal: Enter or Escape or $mod+p
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+p mode "default"
-}
-bindsym $mod+p mode "$mode_launch"
-
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 

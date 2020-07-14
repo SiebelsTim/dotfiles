@@ -45,6 +45,3 @@ element selected {
 
 
 
-configuration {
-  show-icons: true;
-}
