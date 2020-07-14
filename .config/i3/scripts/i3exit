@@ -1,11 +1,20 @@
 #!/bin/sh
 lockn() {
+    trap revert HUP INT TERM
     killall compton
-    i3lock -n -i ~/Pictures/lockscreen.png
+    i3lock -n
     compton --config ~/.config/compton/compton.conf
+    revert
+
+}
+revert() {
+	xset dpms 0 0 0
 }
 lock() {
-    i3lock -i ~/Pictures/lockscreen.png
+    trap revert HUP INT TERM
+    xset +dpms dpms 5 5 5
+    i3lock -n
+    revert
 }
 
 case "$1" in
