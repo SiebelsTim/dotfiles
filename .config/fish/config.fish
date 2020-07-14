@@ -73,5 +73,8 @@ function fish_title
 end
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-alias xclipc='xclip -selection clipboard'
-alias xclipv='xclip -o'
+set -x ISERV_GIT_BASE /home/tim/iserv/copy/iserv3
+set -x MKROOT /home/tim/iserv/copy/iserv3/iserv-dev/lib/dev/mk/
+alias xclipc='xclip -sel clipboard'
+alias xclipv='xclip -out -sel clipboard'
+
