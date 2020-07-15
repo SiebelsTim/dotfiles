@@ -1,0 +1,33 @@
+#!/bin/bash
+
+
+if [ -z ~/.notes ]
+then
+	exit 0
+fi
+
+NOTES="$(cat ~/.notes)"
+COUNT="$(echo "$NOTES" | wc -l)"
+
+echo -n "<span color='#90ee90'>"
+echo -n "Notes: "
+echo -n "$NOTES" | head -n 1 | tr -d "\n"
+
+if [ $COUNT -gt 1 ]
+then
+	echo -n "..."
+	echo -n "[$COUNT]"
+fi
+
+echo -n "</span>"
+echo
+
+if [ "$BLOCK_BUTTON" = "1" ]
+then
+	notify-send "$NOTES"
+fi
+
+if [ "$BLOCK_BUTTON" = "3" ]
+then
+	gnome-terminal -- note
+fi

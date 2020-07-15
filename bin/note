@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ "$1" = "-a" ]
+then
+	echo ${@:2} >> ~/.notes
+else
+	vim ~/.notes
+fi
+
+pkill -SIGRTMIN+3 i3blocks

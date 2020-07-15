@@ -37,3 +37,7 @@ let mapleader=' '
 map <leader>s :!aspell --mode tex -c %<CR>
 
 set laststatus=2
+
+set list
+set listchars=tab:>-
+
