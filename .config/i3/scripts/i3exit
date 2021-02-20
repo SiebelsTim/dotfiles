@@ -1,6 +1,8 @@
 #!/bin/sh
 lock() {
-    i3lock -i ~/Pictures/lockscreen.png
+    killall compton
+    i3lock -n -i ~/Pictures/lockscreen.png
+    compton --config ~/.config/compton/compton.conf
 }
 
 case "$1" in
