@@ -1,13 +1,16 @@
 #!/bin/sh
-lock() {
+lockn() {
     killall compton
     i3lock -n -i ~/Pictures/lockscreen.png
     compton --config ~/.config/compton/compton.conf
 }
+lock() {
+    i3lock -i ~/Pictures/lockscreen.png
+}
 
 case "$1" in
     lock)
-        lock
+        lockn
         ;;
     logout)
         i3-msg exit
