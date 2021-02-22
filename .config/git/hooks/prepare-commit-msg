@@ -1,0 +1,16 @@
+#!/bin/sh
+
+ORIG_MSG_FILE="$1"
+
+if [ -n "$(cat "$1" | grep -Ev "^#")" ] || ! git branch --show-current | grep -E '^[0-9]+-' 
+then
+	exit 0
+fi
+
+TEMP=`mktemp /tmp/git-XXXXX`
+
+TICKETNO=`git branch --show-current | cut -d- -f1`
+
+(echo "(fixes #$TICKETNO)"; cat "$ORIG_MSG_FILE") > "$TEMP"
+cat "$TEMP" > "$ORIG_MSG_FILE"
+

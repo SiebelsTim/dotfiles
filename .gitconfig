@@ -1,0 +1,17 @@
+[user]
+	email = tim.siebels@iserv.eu
+	name = Tim Siebels
+
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+[core]
+	editor = vim
+	hooksPath = /home/tim/.config/git/hooks
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[push]
+	default = current
