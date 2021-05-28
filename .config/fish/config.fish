@@ -75,3 +75,5 @@ end
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias xclipc='xclip -selection clipboard'
 alias xclipv='xclip -o'
+alias V='vim -c "set nomod" -'
+
