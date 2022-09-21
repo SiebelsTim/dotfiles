@@ -7,40 +7,41 @@
   width: 70%;
 }
 
-inputbar {
+#inputbar {
   border: 0 0 1px 0;
   children: [prompt,entry];
 }
 
-prompt {
+#prompt {
   padding: 16px;
   border: 0 1px 0 0;
 }
 
-textbox {
+#textbox {
   background-color: #2e343f;
   border: 0 0 1px 0;
   border-color: #282C33;
   padding: 8px 16px;
 }
 
-entry {
+#entry {
   padding: 16px;
 }
 
-listview {
+#listview {
   cycle: false;
   margin: 0 0 -1px 0;
   scrollbar: false;
   columns: 3;
 }
 
-element {
+#element {
   border: 0 0 1px 0;
   padding: 16px;
 }
 
-element selected {
+
+#element selected {
   background-color: #2e343f;
 }
 

@@ -258,4 +258,4 @@ exec_always --no-startup-id xinput --set-prop "DELL07E6:00 06CB:76AF Touchpad" "
 
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
 exec_always --no-startup-id setxkbmap -model pc105 -layout de -variant nodeadkeys
-
+exec_always ~/.config/i3/scripts/gnome-keyring.sh

@@ -1,9 +1,10 @@
 #!/bin/sh
 lockn() {
     trap revert HUP INT TERM
-    killall compton
+    killall compton || :
+    xset +dpms dpms 5 5 5
     i3lock -n
-    compton --config ~/.config/compton/compton.conf
+    compton --config ~/.config/compton/compton.conf &
     revert
 
 }

@@ -77,4 +77,4 @@ alias xclipc='xclip -sel clipboard'
 alias xclipv='xclip -out -sel clipboard'
 alias V='vim -c "set nomod" -'
 set -x ISERV_GIT_BASE /home/tim/iserv/copy/iserv3
-set -x MKROOT /home/tim/iserv/copy/iserv3/iserv-dev/lib/dev/mk/
+set -x MKROOT /home/tim/iserv/copy/iserv3/buildtools/lib/buildtools/mk
