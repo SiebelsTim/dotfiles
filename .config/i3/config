@@ -142,8 +142,8 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 for_window [title="Android Emulator -*"] floating enable
 # default workspaces
-assign [class="Firefox"] $ws1
-assign [class="Thunderbird"] $ws5
+assign [class="firefox"] $ws1
+assign [class="thunderbird"] $ws5
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
