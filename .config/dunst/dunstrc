@@ -210,6 +210,8 @@
     # layout changes.
     force_xinerama = false
 
+    mouse_left_click = context
+
 # Experimental features that may or may not work correctly. Do not expect them
 # to have a consistent behaviour across releases.
 [experimental]
