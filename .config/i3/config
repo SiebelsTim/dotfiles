@@ -101,7 +101,6 @@ bindsym $mod+y focus child
 
 bindsym $mod+F3 exec --no-startup-id ~/.config/i3/scripts/displayselect
 bindsym $mod+F4 exec --no-startup-id ~/.config/i3/scripts/audioselect
-bindsym $mod+F5 exec --no-startup-id ~/.screenlayout/iserv.sh 
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.

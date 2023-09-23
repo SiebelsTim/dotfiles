@@ -41,4 +41,3 @@ set laststatus=2
 set list
 set listchars=tab:>-
 
-source ~/.vim/iserv/gitcommit.vim
