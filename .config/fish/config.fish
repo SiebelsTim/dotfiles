@@ -10,6 +10,8 @@ set __fish_git_prompt_char_stagedstate '●'
 set __fish_git_prompt_char_stashstate "☰ "
 set __fish_git_prompt_char_upstream_ahead '↑'
 set __fish_git_prompt_char_upstream_behind '↓'
+
+set __kube_ps_enabled 1
  
 function fish_prompt
         set -l last_status $status
@@ -36,6 +38,9 @@ function fish_prompt
         end
 
        printf '\n'
+       set_color cyan
+       printf '%s ' (__kube_prompt)
+       set_color normal
        printf '%s ' (__fish_git_prompt)
        if [ $is_root ]
           set_color --bold red
@@ -76,5 +81,10 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias xclipc='xclip -sel clipboard'
 alias xclipv='xclip -out -sel clipboard'
 alias V='vim -c "set nomod" -'
-set -x ISERV_GIT_BASE /home/tim/iserv/copy/iserv3
-set -x MKROOT /home/tim/iserv/copy/iserv3/buildtools/lib/buildtools/mk
+set --universal nvm_default_version v18.19.0
+
+function _which
+	command -s $(string sub --start=2 $argv)
+end
+abbr -a = --regex '=\w+' --position anywhere --function _which
+
