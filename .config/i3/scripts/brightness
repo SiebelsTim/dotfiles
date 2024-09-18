@@ -1,8 +1,9 @@
 #!/bin/sh
 
 case "$BLOCK_BUTTON" in
-	4) xbacklight -inc 5;;
-	5) xbacklight -dec 5;;
+	4) sudo /home/tim/bin/cbacklight --inc 5;;
+	5) sudo /home/tim/bin/cbacklight --dec 5;;
 esac
 
-printf "%2.0f %%" $(xbacklight)
+#printf "%2.0f %%" $(sudo /home/tim/bin/cbacklight)
+sudo /home/tim/bin/cbacklight | cut -f2 -d':'
