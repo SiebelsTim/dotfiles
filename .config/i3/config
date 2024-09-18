@@ -251,10 +251,12 @@ bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 
 exec --no-startup-id nm-applet
-exec --no-startup-id compton --config ~/.config/compton/compton.conf
+#exec --no-startup-id compton --config ~/.config/compton/compton.conf
 exec_always --no-startup-id xinput --set-prop "DELL07E6:00 06CB:76AF Touchpad" "libinput Natural Scrolling Enabled" 1
 exec_always --no-startup-id xinput --set-prop "DELL07E6:00 06CB:76AF Touchpad" "libinput Tapping Enabled" 1
 
-exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
+exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper-jan.png
 exec_always --no-startup-id setxkbmap -model pc105 -layout de -variant nodeadkeys
 exec_always ~/.config/i3/scripts/gnome-keyring.sh
+exec --no-startup-id redshift -t 4500:6500 -l 52.277080035853594:10.53673268660772
+
