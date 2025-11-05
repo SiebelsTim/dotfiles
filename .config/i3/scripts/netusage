@@ -1,0 +1,28 @@
+#!/usr/bin/env php
+<?php
+
+$ret=`ip --json -4 -s link|jq -c '.[]|select(.ifname=="tun0" or .ifname =="enxf4dd06a8dd8d")|{name:.ifname,stats:.stats64}' \
+	|jq -c '{rx:.stats.rx.bytes,tx:.stats.tx.bytes,name:.name}'`;
+
+$lines=explode("\n",$ret);
+
+foreach ($lines as $line) {
+	$data = json_decode($line,true);
+	if ($data === null) {
+		continue;
+	}
+	echo $data['name'], ': ', pretty($data['rx']+$data['tx']), "; ";
+}
+
+function pretty($b) {
+	if ($b > 1e9) {
+		return round($b/1e9,2) . "G";
+	}
+	if ($b > 1e6) {
+		return round($b/1e6,2) . "M";
+	}
+	if ($b > 1e3) {
+		return round($b/1e3,2) . "K";
+	}
+	return $b."B";
+}

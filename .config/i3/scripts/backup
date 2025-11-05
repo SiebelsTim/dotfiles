@@ -1,0 +1,21 @@
+#!/bin/bash
+
+LASTLINE=$(tail -n1 /var/log/iservbackup)
+
+if ! echo "$LASTLINE" | grep -q success;
+then
+	echo "<span color='#ff0000'> FAILED</span>"
+else
+	DATE=$(echo "$LASTLINE" | cut -d'T' -f1)
+	TIMESTAMP=$(date -d "$DATE" "+%s")
+	NOW=$(date "+%s")
+	DIFF=$((NOW-TIMESTAMP))
+	if [ $DIFF -lt 172800 ];
+	then
+		echo " OK"
+	else
+		DAYS=$((DIFF/86400))
+		echo "<span color='#FFFF00'> $DAYS days</span>"
+	fi
+fi
+

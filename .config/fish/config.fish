@@ -81,10 +81,14 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias xclipc='xclip -sel clipboard'
 alias xclipv='xclip -out -sel clipboard'
 alias V='vim -c "set nomod" -'
-set --universal nvm_default_version v18.19.0
+set --universal nvm_default_version v24
 
 function _which
 	command -s $(string sub --start=2 $argv)
 end
 abbr -a = --regex '=\w+' --position anywhere --function _which
+abbr pn pnpm
 
+export SSH_AUTH_SOCK=$HOME/.1password/agent.sock
+export GOPATH=$HOME/go
+fish_add_path $GOPATH/bin

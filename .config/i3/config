@@ -216,8 +216,8 @@ bindsym Control+XF86AudioLowerVolume exec amixer -q -D pulse sset Master 1%- && 
 bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+1 i3blocks
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5 && pkill -RTMIN+2 i3blocks
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5 && pkill -RTMIN+2 i3blocks
+bindsym XF86MonBrightnessUp exec sudo /home/tim/bin/cbacklight --inc 5 && pkill -RTMIN+2 i3blocks
+bindsym XF86MonBrightnessDown exec sudo /home/tim/bin/cbacklight --dec 5 && pkill -RTMIN+2 i3blocks
 
 bindsym Control+XF86MonBrightnessUp exec xbacklight -inc 1 && pkill -RTMIN+2 i3blocks
 bindsym Control+XF86MonBrightnessDown exec xbacklight -dec 1 && pkill -RTMIN+2 i3blocks
@@ -252,11 +252,11 @@ bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 
 exec --no-startup-id nm-applet
 #exec --no-startup-id compton --config ~/.config/compton/compton.conf
-exec_always --no-startup-id xinput --set-prop "DELL07E6:00 06CB:76AF Touchpad" "libinput Natural Scrolling Enabled" 1
-exec_always --no-startup-id xinput --set-prop "DELL07E6:00 06CB:76AF Touchpad" "libinput Tapping Enabled" 1
+#exec_always --no-startup-id xinput --set-prop "DELL07E6:00 06CB:76AF Touchpad" "libinput Natural Scrolling Enabled" 1
+#exec_always --no-startup-id xinput --set-prop "DELL07E6:00 06CB:76AF Touchpad" "libinput Tapping Enabled" 1
 
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper-jan.png
 exec_always --no-startup-id setxkbmap -model pc105 -layout de -variant nodeadkeys
 exec_always ~/.config/i3/scripts/gnome-keyring.sh
-exec --no-startup-id redshift -t 4500:6500 -l 52.277080035853594:10.53673268660772
+#exec --no-startup-id redshift -t 4500:6500 -l 52.277080035853594:10.53673268660772
 

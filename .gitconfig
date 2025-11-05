@@ -1,11 +1,33 @@
 [user]
-	email = git@tsiebels.de
+	email = tim@eduplaces.de
 	name = Tim Siebels
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICF+JTGMd/OZ46AG3PC28mNQq9TLNotwk69+HB2IGvax
 [color]
 	ui = true
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
 [core]
 	editor = vim
+	abbrev = 7
 [pull]
 	rebase = true
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+[push]
+	autoSetupRemote = true
+
+[pager]
+	diff = diff-highlight|less
+[init]
+	defaultBranch = main
+[diff]
+	algorithm = histogram
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[gpg "ssh"]
+	allowedSignersFile = /home/tim/.config/git/allowed_signers
